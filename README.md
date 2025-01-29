@@ -1,5 +1,8 @@
 # Skin Disease Analysis System
 
+![Alt text](https://github.com/steve-ongera/Skin-Disease-Analysis-System/blob/main/screenshot.PNG)
+
+
 ## Overview
 A Django-based web application that uses machine learning to analyze skin conditions and provide preliminary medical insights. The system helps users identify potential skin conditions and offers recommendations while emphasizing the importance of professional medical consultation.
 
