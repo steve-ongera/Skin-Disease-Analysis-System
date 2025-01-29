@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{ analysis.image.url }}" class="img-fluid rounded" alt="Skin image">
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3>Analysis Results</h3>
+            </div>
+            <div class="card-body">
+                <h4>Diagnosis</h4>
+                <p>{{ analysis.diagnosis }}</p>
+                
+                <h4>Confidence Score</h4>
+                <div class="progress mb-3">
+                    <div class="progress-bar" role="progressbar" 
+                         style="width: {{ analysis.confidence_score|floatformat:2 }}%"
+                         aria-valuenow="{{ analysis.confidence_score|floatformat:2 }}"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                        {{ analysis.confidence_score|floatformat:2 }}%
+                    </div>
+                </div>
+                
+                <h4>Severity Level</h4>
+                <p class="badge bg-{% if severity == 'High' %}danger{% else %}warning{% endif %}">
+                    {{ severity }}
+                </p>
+                
+                <h4>Recommendations</h4>
+                <ul class="list-group">
+                    {% for rec in recommendations %}
+                        <li class="list-group-item">{{ rec }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to Skin Disease Analysis</h1>
+    <p class="lead">Upload your skin images for instant analysis and recommendations</p>
+    <div class="mt-4">
+        <a href="{% url 'skin_analysis:upload' %}" class="btn btn-primary btn-lg">Upload Image</a>
+    </div>
+</div>
+{% endblock %}
